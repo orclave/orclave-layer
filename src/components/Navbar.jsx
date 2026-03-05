@@ -5,7 +5,7 @@ export default function Navbar({ onNavigate, onOpenModal }) {
   return (
     <nav id="main-nav">
       <a href="#" className="logo" onClick={(e) => { e.preventDefault(); onNavigate('top'); }}>
-        <img src="/logo_transparent.png?v=2" alt="Orclave Logo" style={{ width: '40px', height: '40px', objectFit: 'contain', flexShrink: 0, marginRight: '-8px' }} />
+        <img src="/logo_transparent.png?v=3" alt="Orclave Logo" style={{ width: '40px', height: '40px', objectFit: 'contain', flexShrink: 0, marginRight: '-8px' }} />
         <span className="logo-text">Orclave<span> Layer</span></span>
       </a>
       <ul className="nav-links">
