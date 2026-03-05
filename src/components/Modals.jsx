@@ -35,7 +35,7 @@ function EarlyAccessModal({ onClose, onSwitch }) {
         <div className="modal">
             <button className="modal-close" onClick={onClose}>✕</button>
             <div className="modal-logo">
-                <img src="/logo_transparent.png" alt="Orclave Logo" style={{ width: '40px', height: '40px', objectFit: 'contain', flexShrink: 0, marginRight: '-8px' }} />
+                <img src="/logo_transparent.png?v=2" alt="Orclave Logo" style={{ width: '40px', height: '40px', objectFit: 'contain', flexShrink: 0, marginRight: '-8px' }} />
                 <span className="logo-text">Orclave<span> Layer</span></span>
             </div>
 
