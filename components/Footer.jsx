@@ -17,6 +17,7 @@ export default function Footer({ onNavigate, onOpenModal }) {
                 <a onClick={() => onNavigate('security')}>Security</a>
                 <a onClick={() => onOpenModal('docs-modal')}>Docs</a>
                 <a href="https://x.com/OrclaveLayer" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+                <a href="https://github.com/orclave/orclavelayer" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
         </footer>
     );
