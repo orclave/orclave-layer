@@ -13,7 +13,7 @@ export default function CTA({ onOpenDocs, onOpenEarlyAccess }) {
                     Request Early Access
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                 </button>
-                <button className="btn-hero-ghost" onClick={() => onOpenDocs('docs-modal')}>Read the Docs</button>
+                <a href="/docs" className="btn-hero-ghost">Read the Docs</a>
             </div>
         </section>
     );

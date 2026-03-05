@@ -12,7 +12,6 @@ import CTA from '../components/CTA'
 import Footer from '../components/Footer'
 import Modals from '../components/Modals'
 import DemoModal from '../components/DemoModal'
-import DocsModal from '../components/DocsModal'
 import Dashboard from '../components/Dashboard'
 import { supabase } from '../lib/supabase'
 
@@ -109,7 +108,6 @@ export default function HomePage() {
                 }}
             />
             <DemoModal activeModal={activeModal} onClose={() => setActiveModal(null)} />
-            <DocsModal activeModal={activeModal} onClose={() => setActiveModal(null)} />
         </div>
     )
 }

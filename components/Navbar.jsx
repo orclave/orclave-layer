@@ -14,7 +14,7 @@ export default function Navbar({ onNavigate, onOpenModal }) {
         <li><a onClick={() => onNavigate('security')}>Security</a></li>
         <li><a onClick={() => onNavigate('developer')}>Developers</a></li>
         <li><a onClick={() => onNavigate('pricing')}>Pricing</a></li>
-        <li><a onClick={() => onOpenModal('docs-modal')}>Docs</a></li>
+        <li><a href="/docs">Docs</a></li>
       </ul>
       <div className="nav-right">
         <button className="btn-outline" onClick={() => onOpenModal('signin-modal')}>Sign In</button>
