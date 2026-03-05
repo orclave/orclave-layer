@@ -79,15 +79,38 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ---
 
-## Tech Stack
+## Use Cases
 
-| Layer | Technology |
-|---|---|
-| Framework | [Next.js 15](https://nextjs.org/) — App Router |
-| Auth | [Supabase](https://supabase.com/) — Google & GitHub OAuth |
-| Styling | Vanilla CSS with custom design tokens |
-| Fonts | Syne & DM Sans via Google Fonts |
-| Deployment | [Vercel](https://vercel.com/) |
+### 🤖 Autonomous Trading Agents
+An AI trading agent is authorized to execute swaps on your behalf — but only up to $500 per trade, only on whitelisted DEXs, and never between 2–6 AM. Any trade exceeding the limit is queued for your approval before it broadcasts.
+
+### 🛒 E-commerce Procurement Bots
+Your purchasing agent can autonomously restock inventory using a virtual card — but only with approved vendors, with a $5,000 monthly cap, and purchases automatically expire after 30 days if unused.
+
+### 🏢 Enterprise Agent Fleets
+A company deploys 50 AI agents, each with isolated virtual cards and wallet scopes. Finance can audit every transaction across all agents from a single dashboard, with no access to private keys.
+
+### 🧪 Research & Experimentation
+A research agent runs DeFi strategies autonomously in a sandboxed environment. Gains are re-invested; losses are capped at a daily budget. No human oversight needed for routine operations — but the audit trail is always available.
+
+---
+
+## FAQ
+
+**Q: Does Orclave ever hold my private keys?**
+No. Orclave Layer is architecturally non-custodial — your private keys are never transmitted to or stored by Orclave. This is a cryptographic guarantee, not a policy choice.
+
+**Q: What chains does Orclave support?**
+Orclave supports EVM-compatible chains (Ethereum, Base, Arbitrum, Polygon, etc.), Solana, and major DeFi protocols natively. More integrations are added regularly.
+
+**Q: What happens if an agent tries to exceed a spending limit?**
+The transaction is blocked before it reaches the blockchain. Depending on your configuration, the agent receives an error, or the transaction is queued for manual approval.
+
+**Q: Can I set different rules for different agents?**
+Yes. Each agent gets its own wallet and/or virtual card with independent policies. You can group agents under shared policies or configure each one individually.
+
+**Q: Is Orclave audited?**
+Security audits are in progress ahead of mainnet launch. Our infrastructure is SOC 2 Type II compliant and all data is encrypted in transit (TLS 1.3) and at rest (AES-256).
 
 ---
 
