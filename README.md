@@ -64,29 +64,49 @@ Orclave Layer works across EVM-compatible chains, Solana, and major DeFi protoco
 
 ---
 
-## Getting Started
+## Quick Start Guide
 
+Connect your first AI agent to Orclave Layer in under 5 minutes.
+
+### Step 1 — Install the SDK
+Install the Orclave Layer SDK using npm or yarn:
 ```bash
-git clone https://github.com/orclave/orclave-layer.git
-cd orclave-layer
-npm install
-npm run dev
+npm install @orclave/layer-sdk
 ```
 
-Open [https://orclavelayer.xyz](https://orclavelayer.xyz) to view it in your browser.
+### Step 2 — Initialize the Client
+Create a new client with your API key from the dashboard:
+```javascript
+import { OrclavLayer } from '@orclave/layer-sdk'
 
----
+const client = new OrclavLayer({
+  apiKey: 'YOUR_API_KEY',
+  network: 'mainnet', // or 'testnet'
+})
+```
 
-## Use Cases
+### Step 3 — Create an Agent Wallet
+Create a non-custodial wallet for your AI agent:
+```javascript
+const wallet = await client.wallets.create({
+  name: 'my-trading-agent',
+  network: 'ethereum',
+})
 
-### 🤖 AI Procurement Agents
-An AI agent tasked with purchasing SaaS subscriptions and cloud infrastructure. Instead of giving the agent a corporate credit card, you issue an Orclave Virtual Card restricted strictly to the `Software` and `Cloud Services` merchant categories, with a hardware-enforced limit of $500/month.
+console.log(wallet.address) // 0x1234...
+```
 
-### 📈 Autonomous Trading Bots
-A DeFi trading bot executing hundreds of transactions per minute on Uniswap. The agent operates freely until it attempts a transaction exceeding 5% of the portfolio's total value, at which point Orclave Layer automatically intercepts the call and requires multi-sig human approval.
+### Step 4 — Set Basic Rules
+Define spending limits before your agent starts operating:
+```javascript
+await client.rules.set(wallet.id, {
+  maxPerTx: '0.1',   // max 0.1 ETH per transaction
+  dailyCap: '1.0',   // max 1 ETH per day
+  requireApproval: { above: '0.5' } // human approval above 0.5 ETH
+})
+```
 
-### 🚕 AI Ride-Hailing & Logistics
-An autonomous logistics agent booking rides or freight. Orclave enforces time-based gates so the agent can only spend funds during business hours (9 AM - 5 PM) and blocks any transactions requested from untrusted IPs.
+> **Note**: Your agent is now connected and protected. Keys never leave your environment — Orclave Layer only enforces rules on signed transactions.
 
 ---
 
