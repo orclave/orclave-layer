@@ -35,7 +35,7 @@ function EarlyAccessModal({ onClose, onSwitch }) {
         <div className="modal">
             <button className="modal-close" onClick={onClose}>✕</button>
             <div className="modal-logo">
-                <div className="logo-icon"></div>
+                <img src="/logo_transparent.png" alt="Orclave Logo" style={{ width: '40px', height: '40px', objectFit: 'contain', flexShrink: 0, marginRight: '-8px' }} />
                 <span className="logo-text">Orclave<span> Layer</span></span>
             </div>
 
@@ -99,7 +99,7 @@ function SignInModal({ onClose, onSwitch }) {
         <div className="modal">
             <button className="modal-close" onClick={onClose}>✕</button>
             <div className="modal-logo">
-                <div className="logo-icon"></div>
+                <img src="/logo.png" alt="Orclave Logo" style={{ width: '28px', height: '28px', objectFit: 'contain', mixBlendMode: 'screen' }} />
                 <span className="logo-text">Orclave<span> Layer</span></span>
             </div>
             <div className="modal-title">Welcome back</div>
