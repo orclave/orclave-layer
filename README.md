@@ -15,7 +15,7 @@ Set limits. Enforce rules. Safeguard assets — without sacrificing agent autono
 
 ---
 
-## What is Orclave Layer?
+## Overview
 
 As AI agents begin executing real financial transactions autonomously, there is no infrastructure layer that enforces *your* rules. Orclave Layer sits **between your agent and the blockchain**, enforcing programmable spending policies on every on-chain or off-chain action.
 
@@ -23,27 +23,50 @@ As AI agents begin executing real financial transactions autonomously, there is 
 
 ---
 
-## Core Features
+## How It Works
 
-| Feature | Description |
-|---|---|
-| 🔐 **Non-Custodial Wallets** | Agents get on-chain capability without you handing over private keys — ever. |
-| 💳 **Virtual Cards for AI** | Programmable Visa cards with per-card limits, merchant restrictions, and automatic expiry. |
-| ⚙️ **Spending Rules Engine** | Per-transaction limits, daily caps, address whitelists, and time-based restrictions. |
-| ✅ **Approval Gates** | Flag high-risk transactions for human review before they execute. |
-| 📋 **Full Audit Trail** | 100% visibility into every action your agents take, with tamper-proof logs. |
-| 🔗 **Native DeFi Integrations** | Works across EVM chains, Solana, and major DeFi protocols out of the box. |
+Orclave Layer acts as a middleware between your AI agents and any financial endpoint — wallets, virtual cards, or DeFi protocols. Every transaction request from an agent passes through the Orclave Rules Engine before it is signed or broadcast.
+
+```
+Your AI Agent → Orclave Layer (Rules Engine) → Blockchain / Payment Network
+```
+
+1. **You define the rules** — Set per-transaction limits, daily spend caps, address whitelists, merchant restrictions, and time-based gates from the dashboard.
+2. **Your agent requests a transaction** — It sends the action to Orclave's API just like any standard wallet or payment call.
+3. **Orclave validates the request** — The Rules Engine checks the action against your active policies in real time.
+4. **The transaction is approved or blocked** — Compliant actions execute immediately. Flagged actions are queued for human approval or rejected outright.
+5. **Everything is logged** — Every decision, approval, and rejection is written to an immutable audit trail.
+
+---
+
+## Core Capabilities
+
+### 🔐 Non-Custodial Wallets
+AI agents can hold and transact on-chain without you handing over your private keys. Orclave issues scoped, policy-bound wallets that expire or revoke automatically.
+
+### 💳 Virtual Cards for Agents
+Issue Visa-compatible virtual cards directly to your AI agents. Each card carries its own spending limit, merchant category restrictions, and automatic expiry — purpose-built for autonomous workflows.
+
+### ⚙️ Spending Rules Engine
+Define fine-grained policies that enforce themselves:
+- Per-transaction and daily spend caps
+- Address whitelists and blacklists
+- Merchant category restrictions
+- Time-based windows (e.g. business hours only)
+- Chain-specific restrictions
+
+### ✅ Approval Gates
+Flag high-value or unusual transactions before they execute. Your team receives a real-time request to approve or reject — giving you a human checkpoint without blocking your agent's workflow.
+
+### 📋 Full Audit Trail
+Every action your agent takes is logged immutably. See the full history of approvals, rejections, amounts, timestamps, and addresses — all in one dashboard.
+
+### 🔗 Native DeFi Integrations
+Orclave Layer works across EVM-compatible chains, Solana, and major DeFi protocols out of the box. No custom adapters required.
 
 ---
 
 ## Getting Started
-
-### Prerequisites
-
-- Node.js v18+
-- npm v9+
-
-### Run Locally
 
 ```bash
 git clone https://github.com/orclave/orclave-layer.git
@@ -52,14 +75,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
-### Build for Production
-
-```bash
-npm run build
-npm start
-```
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ---
 
@@ -72,56 +88,6 @@ npm start
 | Styling | Vanilla CSS with custom design tokens |
 | Fonts | Syne & DM Sans via Google Fonts |
 | Deployment | [Vercel](https://vercel.com/) |
-
----
-
-## Project Structure
-
-```
-orclave-layer/
-├── app/
-│   ├── layout.jsx        # Root layout (metadata, fonts)
-│   ├── page.jsx          # Landing page + auth state
-│   └── globals.css       # Global styles & CSS variables
-├── components/
-│   ├── Navbar.jsx        # Navigation bar
-│   ├── Hero.jsx          # Hero section
-│   ├── Features.jsx      # Feature cards grid
-│   ├── HowItWorks.jsx    # Integration walkthrough
-│   ├── Security.jsx      # Security architecture
-│   ├── Developer.jsx     # Developer API section
-│   ├── Pricing.jsx       # Pricing plans
-│   ├── CTA.jsx           # Call to action
-│   ├── Footer.jsx        # Footer
-│   ├── Dashboard.jsx     # Authenticated dashboard view
-│   ├── Modals.jsx        # Early Access & Sign In modals
-│   ├── DemoModal.jsx     # Interactive product demo
-│   └── DocsModal.jsx     # In-app documentation browser
-├── lib/
-│   └── supabase.js       # Supabase auth client
-└── public/
-    └── logo_transparent.png
-```
-
----
-
-## Authentication
-
-Orclave Layer uses [Supabase Auth](https://supabase.com/auth) for real, production-grade authentication:
-
-- **Google OAuth** — One-click sign in with any Google account
-- **GitHub OAuth** — One-click sign in with GitHub
-- Session state is managed automatically via `onAuthStateChange`
-
-To configure your own auth, see `.env.example` (coming soon) and set up your own [Supabase project](https://supabase.com).
-
----
-
-## Deployment
-
-Deployed to **Vercel** on every push to `master`.
-
-**Live:** [https://orclave.vercel.app](https://orclave.vercel.app)
 
 ---
 
