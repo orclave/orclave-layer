@@ -6,6 +6,11 @@ export const metadata = {
     icons: {
         icon: '/logo_transparent.png',
     },
+    verification: {
+        other: {
+            "virtual-protocol-site-verification": ["228b88517526131364c9b4b2faf2588e"],
+        },
+    },
 }
 
 export default function RootLayout({ children }) {
